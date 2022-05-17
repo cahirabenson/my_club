@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'events/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <center>
+        {% if user.is_authenticated %}
+            <h1>
+            Hello {{user}} events for {{month}} {{year}}
+            </h1>
+            As of {{time}}
+            <br>
+            <br>
+            {{cal|safe}}
+            <br>
+            <br>
+            copyright (c) {{current_year}}
+        {% else %}
+            <h1>Please Log in to Manage Your Events</h1>
+        <br>
+        {% endif %}
+
+    </center>
+{% endblock %}
+</body>
+</html>
